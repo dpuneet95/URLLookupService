@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
+import static com.urllookup.Constants.*;
+
 @RestController
 public class AuthNController {
     @Autowired
     URLRepository urlRepository;
-
-    private static final String SUCCESS = "SUCCESS! URL is secure";
-    private static final String FAILURE = "Malware URL found";
-    private static final String ERROR = "Something went wrong. Please try again!";
 
     @GetMapping("/v1/urlinfo/{url}")
     Response authenticateAccess (@PathVariable String url) {
